@@ -10,8 +10,27 @@ class Program
         "Pantalon jogger", "Polera con capucha", "Bufanda"
     };
 
+    static int[,] stock = new int[15, 5];
+
     static void Main()
     {
-        Console.WriteLine("Modulo 2: Control de Stock iniciado.");
+        LlenarStockInicial();
+        Console.WriteLine("Stock inicial cargado correctamente.");
+    }
+
+    static void LlenarStockInicial()
+    {
+        for (int p = 0; p < 15; p++)
+        {
+            for (int t = 0; t < 5; t++)
+            {
+                stock[p, t] = 50;
+            }
+        }
+    }
+
+    static int ObtenerStock(int p, int t)
+    {
+        return stock[p - 1, t - 1];
     }
 }
