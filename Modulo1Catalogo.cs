@@ -27,6 +27,23 @@ class Program
 
     static void Main()
     {
-        Console.WriteLine("Modulo 1: Catalogo cargado correctamente.");
+        VerCatalogo();
+    }
+
+    static void VerCatalogo()
+    {
+        Console.WriteLine();
+        Console.WriteLine("N".PadRight(4) + "Prenda".PadRight(26) + "Precio sin IGV");
+        Console.WriteLine(new string('-', 46));
+
+        for (int p = 1; p <= 15; p++)
+        {
+            Console.WriteLine(p.ToString().PadRight(4) +
+                              nombres[p - 1].PadRight(26) +
+                              "S/ " + precios[p - 1].ToString("0.00"));
+        }
+
+        Console.WriteLine(new string('-', 46));
+        Console.WriteLine("Tallas: XS, S, M, L, XL (se elige al comprar)");
     }
 }
